@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prototype</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <header class="main-header">
+        <span class="altern-logo"><i class="fas fa-ship"></i></span>
+        <div class="mobile-container">
+            <span class="mobile-toggler"></span>
+        </div>
+            
+            <nav class="mobile-nav">
+                <ul class="links">
+                    <li><a href="{% url 'designs' %}" class="mobile-link"><span></span>Designs</a></li>
+                    <li><a href="{% url 'posts' %}" class="mobile-link"><span></span>Blog</a></li>
+                    <li><a href="{% url 'home' %}#form" class="mobile-link"><span></span>offer?</a></li>
+                    {% if user.is_authenticated and user.is_superuser %}
+                    <li><a href="{% url 'post_create' %}" class="mobile-link"><span></span>Post</a></li>
+                    <li><a href="{% url 'drafts' %}" class="mobile-link"><span></span>Drafts</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            
+            <div class="nav">
+                
+                <a href="{% url 'home'%}">
+                    <span class="brand"><i class="fas fa-ship"></i>PROTOTYPE</span>
+                </a>
+                <ul class="navbar-links">
+                    <li><a href="{% url 'designs' %}" class="nav-link"><span></span>Designs</a></li>
+                    <li><a href="{% url 'posts' %}" class="nav-link"><span></span>Blog</a></li>
+                    <li><a href="{% url 'home' %}#form" class="nav-link"><span></span>offer?</a></li>
+                    {% if user.is_authenticated and user.is_superuser %}
+                    <li><a href="{% url 'post_create' %}" class="nav-link"><span></span>Post</a></li>
+                    <li><a href="{% url 'drafts' %}" class="nav-link"><span></span>Drafts</a></li>
+                    {% endif %}
+                </ul>
+                {% if messages %}
+                {% for message in messages %} 
+                <div class="messages {{message.tags}}">
+                    <p>{{message}}</p>
+                    <span class="message-exit">x</span>
+                </div>
+                {% endfor %}
+                {% endif %}  
+            </div>
+            
+            {% block header_rem %}{% endblock %}
+        </header>
+        
+        {% block content %}
+        {% endblock %}
+        
+        <footer>
+            <ul class="contact-info">
+                <li class="phone"><i class="fas fa-phone"></i>09082150457</li><br>
+                <li><i class="fab fa-whatsapp whatsapp"></i></li>
+                <li><i class="fab fa-youtube youtube"></i></li>
+                <li><i class="fab fa-facebook facebook"></i></li>
+                <li><i class="fab fa-twitter twitter"></i></li>
+            </ul>
+            <p class="firm-info">
+                <span><i class="fas fa-ship"></i>Prototype</span><br>
+                Prototype is a Prototype design that i really do not want to
+                riddle with random lorem ipsum text beacuse  ehatecer Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, expedita!
+            </p>
+        </footer>
+        <span class="remarks">&copysr;Fawaz441</span>
+
+    </body>
+    <script src="{% static 'js/all.js' %}"></script>
+    <script src="{% static 'js/index.js' %}"></script>
+    <script src="{% static 'js/mobile.js' %}"></script>
+    </html>

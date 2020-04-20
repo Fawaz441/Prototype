@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper">
+    <center>
+<form method="post" class="align-form" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Create" class="btn submit_btn">
+</form>
+</center>
+</div>
+
+
+
+
+
+
+<style>
+        .main-header{
+            background:none;
+            height:auto;
+        }
+        .nav{
+            background:rgba(5, 2, 2, 0.986);
+        }
+        body,html{
+    height:100%;
+}
+        </style>
+{% endblock %}

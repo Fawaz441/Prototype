@@ -1,0 +1,751 @@
+
+@font-face{
+    src:url(../fonts/anonymousPro-Regular.ttf);
+    font-family:Thin;
+}
+
+*{
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+body,html{
+    min-height:100vh;
+    width:100%;
+    /* overflow-x:hidden; */
+    
+    
+}
+
+body::-webkit-scrollbar{
+    width:0.8rem;
+}
+
+body::-webkit-scrollbar-track{
+    background:rgb(42, 197, 211);
+}
+
+body::-webkit-scrollbar-thumb{
+    background:rgb(9, 60, 66);
+}
+
+.main-header{
+    height:400px;
+    background:black;
+    background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.9)),url("../images/cars-on-road-in-city-during-night-time-3849167.jpg");
+    background-size:cover;
+    background-position:0% 30%;
+    position:relative;
+}
+
+.nav{
+    width:100%;
+    height:70px;
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.brand{
+    padding:40px;
+    font-size:1.3rem;
+    color:#fff;
+    letter-spacing: 1.4px;
+}
+
+.brand:hover svg{
+    transform:rotate(360deg);
+    transition:0.5s ease-in-out;
+}
+
+.navbar-links{
+    display: flex;
+    margin-right:2rem;
+    list-style: none;
+}
+
+.nav-link{
+    color:white;
+    padding-right:1.5rem;
+    text-transform:uppercase;
+    display:block;
+    position: relative;
+    padding-bottom:3px;
+    overflow:hidden;
+    transition:all 0.5s ease-in-out;
+
+}
+
+.nav-link span{
+    position:absolute;
+    width:60%;
+    height:2px;
+    background:#fff;
+    bottom:0;
+    display:block;
+    left:-100%;
+    transition:all 0.5s ease-in-out;
+}
+
+.nav-link:hover{
+    color:#fff;
+
+}
+.nav-link:hover span{
+    left:0;
+}
+
+.intro{
+    position:absolute;
+    bottom:4rem;
+    color:#fbe9e9;
+    width:600px;
+    text-align:center;
+    left:calc(50vw - 300px);
+}
+
+.intro p{
+    margin-bottom:1.3rem;
+    line-height: 1.2;
+}
+
+.learn-more{
+    padding:10px 20px;
+    background:rgb(251, 247, 247);
+    border-radius:3px;
+    color:rgb(42, 42, 42);
+    transition: all 0.3s ease-in-out;
+    display:inline-block;
+}
+
+.learn-more:hover{
+    background:rgb(42, 197, 211);
+    color:#fff;
+    transform: scale(1.09);    
+}
+
+.side-works{
+    height:200px;
+    padding:3rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    background:rgb(9, 60, 66);
+    
+}
+
+
+.side-works div,.other-programs{
+    height:200px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    text-align: center;
+}
+
+.side-works div{
+    margin-top:-10px;
+}
+
+.side-works div h3{
+    font-size:36px;
+    color:#fff;
+    font-weight:bold;
+    font-family:'Thin';
+}
+
+.side-works div h3 span{
+    font-weight:200;
+    font-size:1rem;
+}
+
+.other-programs{
+    flex-direction: column;
+    list-style:none;
+    text-align:left;
+    margin-left:100px;
+
+}
+.other-programs li{
+    color:rgb(42, 197, 211);
+    font-size:1.1rem;
+    margin-bottom:1rem;
+    width:100%;
+}
+
+.other-programs svg{
+    margin-right:1rem;
+}
+
+.submit-form h1{
+    margin-top:3rem;
+    color:rgb(134, 133, 133);
+    font-weight:200;
+}
+.submit-form{display:flex;flex-direction: column;align-items:center;margin-bottom:4rem;opacity:0;transition: 1s ease-in-out;transform:translateY(60px);}
+.submit-form form{
+    display:flex;
+    flex-direction:column;
+    width:30%;
+    position: relative;
+}
+.appear{
+    transform:translateY(0);
+    opacity:1;
+}
+.submit-form form{
+    padding:3rem 2rem 4rem 2rem;
+    box-shadow:2px 2px 2px #ddd;
+    margin-top:1rem;
+    border-radius: 4px;
+    border:1px solid #ddd;
+
+}
+
+.submit-form form label{
+    color:rgb(13, 134, 150);
+}
+
+.submit-form form input[type="text"],.submit-form form input[type="email"],
+input[type="number"]{
+    outline:none;
+    border:none;
+    border-bottom:1px solid #999;
+    margin-bottom:1rem;
+    height:30px;
+    font-size:14px;
+    transition:all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,input[type="email"]:focus,input[type="number"]:focus{
+    border-bottom:1px solid rgb(42, 197, 211) !important;
+}
+
+.submit-form form input[type="submit"]{
+    background:rgb(13, 134, 150);
+    border:none;
+    color:rgb(255, 255, 255);
+    padding:10px 15px;
+    width:30%;
+    right:1.5rem;
+    bottom:1.5rem;
+    position: absolute;
+    border-radius: 3px;
+    transition:all 0.3s ease-in-out;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    
+}
+
+input[type='submit']:hover{
+    background:rgb(2, 127, 131);
+    color:#fff;
+}
+
+footer{
+    background:rgb(29, 33, 36);
+    padding:2rem 3rem;
+    display:grid;
+    grid-template-columns: 60% 40%;
+    align-items:center; 
+    height:200px;
+}
+
+.firm-info span{
+    font-size:1.3rem;
+    color:#fff;
+    letter-spacing: 1.4px;
+    text-transform:uppercase;
+    display:inline-block;
+    margin-bottom:0.5rem;
+}
+
+.firm-info{
+    color:rgb(230, 227, 227);
+}
+
+.contact-info h2{
+    color:#fff;
+    font-weight:100;
+    margin-bottom:0.5rem;
+}
+
+.contact-info li{
+    display:inline-flex;
+    list-style:none;
+    color:rgb(42, 197, 211);
+    margin-right:1rem;
+}
+.phone{padding-left:0;margin-bottom:1rem;color:#fff !important;}
+.phone svg{transform:rotate(-250deg);color:#fff;}
+.whatsapp,.facebook,.twitter,.youtube{
+    padding:1rem;
+    border-radius:50%;
+    color:rgb(255, 255, 255);
+}
+
+.whatsapp{
+    background:rgb(13, 214, 13);
+}
+.youtube{
+    background:red;
+}
+.facebook{
+    background:rgb(36, 36, 245);
+}
+.twitter{
+    background:rgb(36, 199, 248);
+}
+
+.remarks{
+    display:block;
+    text-align: center;
+    background:rgb(29, 33, 36);
+    color:rgb(10, 201, 207);
+
+}
+.messages{
+    position:absolute;
+    bottom:-20px;
+    height:2rem;
+    color:rgb(255, 255, 255);
+    width:100%;
+    box-shadow:1px 1px 1px grey;
+    transition: all 1s ease-in-out;
+}
+
+.info{
+    background:rgb(42, 197, 211);
+}
+
+.warning{
+    background:red;
+}
+.messages p{padding:0.5rem;}
+.messages span{
+    position:absolute;
+    right:1rem;
+    top:5px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+
+/* Other pages apart from the index */
+.wrapper{
+    margin:1rem 2rem;
+    min-height:calc(100% - 300px);
+
+}
+
+.submit_btn{
+    background:rgb(11, 85, 146);
+    
+}
+
+.align-form{
+    width:500px;
+    margin:3rem;
+    text-align:left;
+}
+
+.align-form label{
+    font-weight: 100;
+}
+
+.align-form p{
+    margin-bottom:1rem;
+}
+
+.align-form p label,.align-form p input{
+    display:block;
+}
+
+.align-form input[type="text"],textarea{
+    border-radius:5px;
+    border-color:rgb(5, 154, 180);
+    border-width: 1px;
+    padding:0.5rem;
+}
+
+.align-form select{
+    padding: 0.5rem;
+}
+
+option{
+    padding:0.4rem;
+}
+option:hover{
+    background: rgb(9, 106, 136);
+    color:#fff;
+}
+
+.overwrap{
+    width:70%;
+}
+
+.overwrap h2{
+    font-size:2rem;
+    color:rgb(34, 26, 26);
+    font-weight:400;
+}
+
+.created_date{
+    color:rgb(19, 112, 219);
+    font-size:0.8rem;
+}
+
+.delete_btn{
+    background:red;
+    color:#fff;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:2rem;
+    border:none;
+    padding:10px 20px;
+    color:#fff;
+    border-radius:5px;
+}
+
+.btn:hover{
+    transform:scale(0.98);
+    transition:all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.simple_btn{
+    background:rgb(10, 73, 145);
+}
+
+.title{
+    font-size:1.5rem;
+    color:#0b4f66;
+    font-weight:400;
+}
+
+.outline{
+    margin-bottom:1rem;
+    max-width:400px;
+    padding:1rem;
+    box-shadow:1px 4px 1px grey , 1px 2px 4px grey;
+    border-radius:10px;
+    position: relative;
+}
+
+.outline:last-of-type{
+    margin-bottom:3rem;
+}
+
+.outline p{
+   max-width:80%;
+   margin-right:2rem;
+}
+
+.outline .area{
+    margin-right:0.6rem;
+    background:#49acce;
+    color:#fff;
+    padding:3px 2px;
+    font-size:10px;
+    border-radius:4px;
+    margin-bottom:8px;
+    cursor: pointer;
+}
+
+.pic{
+    position:absolute;
+    right:0;
+    top:0.5rem;
+    height:80px;
+    width:80px;
+    border-radius:50%;
+}
+
+.pic img{
+    height:80%;
+    width:80%;
+    position:absolute;
+    border-radius: 50%;
+    display:block;
+}
+
+.designs_wrapper{
+    min-height:100vh;
+    padding:1rem 2rem;
+}
+
+.designs_wrapper h1{
+    color:#0b4f66;
+    margin-bottom:1.2rem;
+    font-weight:400;
+}
+
+.designs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    /* justify-items: center; */
+    grid-auto-rows: 400px;
+}
+
+.designs > div{
+    display:flex;
+    width:40vw;
+    position: relative;
+    border-radius: 5px;
+}
+
+.info{
+    width:100%;
+    position:absolute;
+    bottom:0;
+    height: 30%;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    font-size:1.2rem;
+    color:#f2f3f4;
+}
+
+.holder{
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    position:absolute;
+    height:70%;
+    width:100%;
+    border-top-right-radius:5px;
+    border-top-left-radius:5px;
+
+
+}
+
+.holder1{
+    background-image:url('../images/picture1.jpg');
+}
+
+.holder2{
+    background-image:url('../images/drone.jpg');
+}
+
+.goto{
+    color:#fff;
+    background: #067a8f;
+    padding:0.8rem 2rem;
+    border-radius: 5px;
+    transition:all 0.6s ease-in-out;
+    position: relative;
+    overflow-x:hidden;
+    display: block;
+}
+
+.goto span{
+    position:absolute;
+    width:100%;
+    height:2px;
+    transition:all 0.6s ease-in-out;
+    display:block;
+}
+
+.goto span:nth-of-type(1){
+    top:0;
+    background:#0b4f66;
+    right:-100%;
+}
+
+.goto:hover span:nth-of-type(1){
+    right:100%;
+}
+
+.goto span:nth-of-type(2){
+    bottom:0;
+    background:#0b4f66;
+    left:-100%;
+}
+
+
+.goto:hover span:nth-of-type(2){
+    left:100%;
+}
+
+.goto:hover{
+    background:#fff;
+    color:#000;
+}
+
+
+/* Mobile Nav  */
+.mobile-toggler{
+    display:block;
+    width:35px;
+    height:3px;
+    background:#fff;
+    margin-left:16px;
+    position:relative;
+    transform:translateY(-2px);
+    cursor: pointer;
+    transition:0.5s ease-in-out;
+}
+
+.exit{
+    background:transparent;
+    transition:0.5s ease-in-out;
+
+}
+
+.exit::before{
+    transform:rotate(45deg) translateX(5px,-13px);
+    transition:0.5s ease-in-out;
+
+    
+}
+
+.exit::after{
+    transform:rotate(-45deg) translate(13px,-5px);
+    transition:0.5s ease-in-out;
+
+}
+
+.exit::before{
+    transform:rotate(45deg) translate(9px);
+}
+
+.mobile-toggler::before,
+.mobile-toggler::after{
+    content:'';
+    position: absolute;
+    display:block;
+    width:35px;
+    height:3px;
+    background:#fff;
+    transition:0.5s ease-in-out;
+
+}
+.mobile-toggler::before{
+    top:-10px;
+}
+.mobile-toggler::after{
+    top:10px;
+}
+
+.mobile-container,.mobile-nav{
+    z-index:-5;
+    display:none;
+}
+
+.altern-logo{
+    display:none;
+}
+
+
+/* Small screens  */
+@media(max-width:800px){
+    
+    .mobile-container{
+        z-index:4;
+        display:block;
+        position:absolute;
+        left:0.5rem;
+        top:1.7rem;
+
+    }
+
+    .mobile-nav{
+        width:100%;
+        height:100vh;
+        background:rgb(3, 131, 136);
+        position: fixed;
+        flex-direction:column;
+        justify-content: center;
+        align-items:center;
+        display:flex;
+        opacity:0;
+        transition:0.5s ease-in-out;
+
+        
+    }
+
+    .mobile-nav .links li{
+        text-transform:uppercase;
+        font-size:1.5rem;
+        margin-bottom:1rem;
+        list-style:none;
+    }
+
+    .mobile-nav .links li a{
+        color:#fff;
+    }
+
+    .navbar-links,.brand{display:none;}
+
+    .altern-logo{
+        right:50%;
+        left:50%;
+        top:1rem;
+        color:#fff;
+        font-size:20px;
+        z-index:10;
+        display:block;
+        position: absolute;
+        
+    }
+
+    .intro {
+        width:300px;
+        left:calc(50vw - 150px);
+    }
+
+    .side-works div h3{
+        font-size:1.5rem;
+    }
+
+    .other-programs{
+        margin-left:30px;
+    }
+
+    .other-programs li{
+        font-size:1rem;
+    }
+
+    .submit-form form{
+        width:300px;
+    }
+
+    footer{
+        display:block;
+        height: 250px;
+    }
+
+    .contact-info{
+        margin-bottom:1.5rem;
+    }
+
+    .designs{
+        grid-template-columns: 1fr;
+        grid-auto-rows:300px;
+        grid-gap:25px;
+    }
+
+    .designs > div{
+        width:100%;
+        box-shadow:1px 2px 2px grey;
+        overflow:hidden;
+    }
+
+    .info{
+        font-size:1rem;
+    }
+
+    .goto{
+        margin-top:-10px;
+    }
+}

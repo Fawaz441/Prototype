@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper">
+<h1>Are you sure you want to delete <span style="color:brown">{{object.title}}</span>?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn delete_btn" value="Delete">
+    <a href="{{object.detail}}" class="btn simple_btn">Cancel</a>
+</form>
+</div>
+
+
+
+<style>
+        .main-header{
+            background:none;
+            height:auto;
+        }
+        .nav{
+            background:rgba(5, 2, 2, 0.986);
+        }
+        body,html{
+    height:100%;
+}
+        </style>
+{% endblock %}

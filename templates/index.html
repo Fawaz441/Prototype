@@ -1,0 +1,44 @@
+  {% extends 'base.html' %}
+  
+  {% block header_rem %}
+
+        <div class="intro">
+            <p>The best services you can find anywhere! We are undisputably the best.
+                We make sure your designs stand out and give you an edge over other businesses.
+            </p>
+            <a href="" class="learn-more">Learn More</a>
+        </div>
+    {% endblock %}
+    {% block content %}
+    <section class="side-works">
+        <div>
+            <h3>Not just one basket!<br>
+                <span>We do have other programs and services</span>
+            </h3>
+        </div>
+        
+        <ul class="other-programs">
+            <li><i class="fas fa-wifi"></i>Networking</li>
+            <li><i class="fas fa-wrench"></i>Engineering</li>
+            <li><i class="fas fa-user-secret"></i>Hacking</li>
+            <li><i class="fas fa-suitcase"></i>Data Analysis</li>
+        </ul>
+    </section>
+    <section class="submit-form" id="form">
+        <h1>Send us an offer here!</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="id_client_name">Name</label>
+            {{form.client_name}}
+            <label for="id_service">Service</label>
+            {{form.service}}
+            <label for="id_number">Phone Number</label>
+            {{form.number}}
+            <label for="id_email">Email</label>
+            {{form.email}}
+            <input type="submit" value="Submit" class="submit_btn">
+        </form>
+    </section>
+    
+    {% endblock %}
+ 

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper full">
+    {% for post in post_list %}
+    <div class="outline">
+        <a href="{{post.detail}}"><h3 class="title">{{post.title}}</h3></a>
+        <span class="area">{{post.area}}</span><br>
+        <span class="created_date">{{post.published_date}}</span><br>
+        <p>{{post.content|truncatechars:100|safe|linebreaksbr}}</p>
+        {% if post.image %}
+        <div class="pic">
+            <a href="#">
+                <img src="{{post.image.url}}" alt="{{post.title}}">
+            </a>
+        </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    .main-header{
+        background:none;
+        height:auto;
+    }
+    .nav{
+        background:rgba(9, 146, 158, 0.986);
+    }
+  body,html{
+      min-height: 100vh;
+  }
+</style>
+{% endblock %}

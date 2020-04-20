@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="wrapper">
+    <div class="overwrap">
+        <h2>{{post.title}}.</h2>
+        {% if user.is_superuser %}
+        <span class="created_date">Created on {{post.created_at}}</span><br/>
+        {% if post.published_date %}
+        <span class="created_date">Published on {{post.published_date}}</span><br/>
+        {% endif %}
+        {% else %}
+        <span class="created_date">Published on {{post.published_date}}</span><br/>
+        {% endif %}
+        {{post.content|safe|linebreaksbr}}
+    </div>
+    {% if user.is_superuser %}
+    <a href="{% url 'delete' slug=post.slug %}" class="btn delete_btn">Delete</a>
+    {% if post.published_date %}
+    {% else %}
+    <a href="{% url 'publish' slug=post.slug %}" class="btn submit_btn">Publish</a>
+    {% endif %}
+    {% endif %}
+</div>
+
+<style>
+.main-header{
+    background:none;
+    height:auto;
+}
+.nav{
+    background:rgba(5, 2, 2, 0.986);
+}
+body,html{
+    height:100%;
+}
+</style>
+{% endblock %}
